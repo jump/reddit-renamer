@@ -1,0 +1,22 @@
+{
+  "manifest_version": 3,
+  "name": "Reddit Subreddit Renamer",
+  "version": "1.2",
+  "description": "Renames subreddits on reddit.com",
+  "permissions": ["storage"],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.reddit.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["nameMap.json"],
+      "matches": ["https://*.reddit.com/*"]
+    }
+  ]
+}
